@@ -1,0 +1,6 @@
+GNU Coding Standards 6.8 ChangeLogs:
+http://www.gnu.org/prep/standards/html_node/Change-Logs.html#Change-Logs
+
+2014-01-25 Ruben laguna <ruben.laguna at gmail.com>
+
+  * main.c (some_function) : Fix something.
