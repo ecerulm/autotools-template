@@ -1,6 +1,9 @@
 # autotools-template
 Template for an autotools (autoconf, automake) project
 
-# Files provided:
-* autogen.sh: will generate the .configure and Makefile.in templates
-              from configure.ac and the Makefile.am files
+
+./autogen.sh will generate ./configure and the Makefile.in files
+from the configure.ac, Makefile.am and src/Makefile.am files
+
+./configure will generate config.h and Makefile and src/Makefile
+
