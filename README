@@ -2,8 +2,28 @@
 Template for an autotools (autoconf, automake) project
 
 
+Edit configure.ac to change the FULL-PACKAGE-NAME, VERSION and 
+BUG-REPORT-ADDRESS fields to match your project.
+
+Edit src/Makefile.am to configure the "products" or executables. 
+bin_PROGRAMS = executable1 executable2
+executable1_SOURCES = sourcefile1.c sourcefile2.c
+executable1_CFLAGS = 
+executable2_SOURCES = sourcefile3.c sourcefile4.c
+executable2_CFLAGS = 
+
+
+
 ./autogen.sh will generate ./configure and the Makefile.in files
 from the configure.ac, Makefile.am and src/Makefile.am files
 
 ./configure will generate config.h and Makefile and src/Makefile
+
+
+Run: 
+./autogen.sh && ./configure && make
+
+to test the whole setup. 
+
+You need to run ./autogen.sh && ./configure after modifying *.ac or *.am files
 
