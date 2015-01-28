@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AM_INIT_AUTOMAKE([foreign]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
+AM_INIT_AUTOMAKE([foreign subdir-objects]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
 AM_SILENT_RULES([yes]) # less verbose make output https://autotools.io/automake/silent.html
 
@@ -37,6 +37,5 @@ AC_CHECK_HEADER([stdlib.h])
 # Checks for library functions.
 
 
-AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
