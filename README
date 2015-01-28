@@ -27,3 +27,8 @@ to test the whole setup.
 
 You need to run ./autogen.sh && ./configure after modifying *.ac or *.am files
 
+Reference material
+==================
+
+Autotools: A Practitioner's Guide to GNU Autoconf, Automake, and Libtool by John Calcote
+Autotools Mythbuster https://autotools.io/index.html
