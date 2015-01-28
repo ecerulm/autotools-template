@@ -15,7 +15,7 @@ missing
 src/.deps/
 src/Makefile
 src/Makefile.in
-src/main.o
+src/*.o
 src/myexecutable
 stamp-h1
 
