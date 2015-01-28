@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
 AM_SILENT_RULES([yes]) # less verbose make output https://autotools.io/automake/silent.html
 
