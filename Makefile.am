@@ -1,3 +1,5 @@
+AM_CFLAGS = # CFLAGS applicable to all executables (products)
+
 bin_PROGRAMS = myexecutable
 myexecutable_SOURCES = \
                        src/main.c
