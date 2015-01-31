@@ -24,6 +24,11 @@ AC_PROG_INSTALL
 
 # Checks for libraries.
 
+# Found libraries are automatically addded to LIBS
+# AC_SEARCH_LIBS([pthread_cond_wait], [pthread],[],[
+#                 AC_MSG_ERROR([You need to install pthreads library.])
+#                 ])
+
 # Checks for header files.
 AC_CHECK_HEADER([stdlib.h])
 
