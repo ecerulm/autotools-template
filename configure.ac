@@ -14,12 +14,13 @@ AC_LANG([C]) # Use C not C++
 
 # Checks for programs.
 AC_PROG_CC
-AC_PROG_CC_C99 # or AC_PROG_CC_89 to force C89 mode or AC_PROG_CC_STDC to go to latest supported standard (currently C99)
 
 # In case that you want to check for specific versions of gcc 
 # For example in case that you need C11 support you want to 
 # check for gcc-4.9 
 #AC_PROG_CC([gcc-4.9 gcc cc])
+
+AC_PROG_CC_C99 # or AC_PROG_CC_89 to force C89 mode or AC_PROG_CC_STDC to go to latest supported standard (currently C99)
 
 AC_PROG_INSTALL
 
