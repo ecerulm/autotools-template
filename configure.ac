@@ -5,7 +5,11 @@ AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AM_INIT_AUTOMAKE([foreign subdir-objects]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
-AM_SILENT_RULES([yes]) # less verbose make output https://autotools.io/automake/silent.html
+# silent make https://autotools.io/automake/silent.html
+# silent rules enabled by default with 'yes'
+# disable silent runles with ./configure --disable-silent-rules
+AM_SILENT_RULES([yes]) # less verbose make output 
+# AM_SILENT_RULES() # use make -s to get silent output
 
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
