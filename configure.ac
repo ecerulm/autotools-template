@@ -44,5 +44,7 @@ AC_CHECK_HEADER([stdlib.h])
 # Checks for library functions.
 
 
+PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) # use pkg-config to fill DEPS_CFLAGS and DEPS_LIBS
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

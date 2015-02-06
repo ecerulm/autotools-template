@@ -1,4 +1,5 @@
-INSTALL
+.deps
+.dirstamp
 Makefile
 Makefile.in
 aclocal.m4
@@ -12,7 +13,6 @@ configure
 depcomp
 install-sh
 missing
-src/.deps/
 src/Makefile
 src/Makefile.in
 src/*.o
@@ -20,5 +20,9 @@ src/myexecutable
 stamp-h1
 *~
 myexecutable
-.dirstamp
-
+test-driver
+test-suite.log
+tests/*.o
+testsuite
+testsuite.log
+testsuite.trs
