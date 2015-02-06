@@ -13,5 +13,5 @@ testsuite_CFLAGS = $(DEPS_CFLAGS) # DEPS_* are filled by PKG_CHECK_MODULES
 testsuite_LDADD = $(DEPS_LIBS)     # in configure.ac
 
 testsuite_SOURCES = tests/test.c
-TESTS = testsuite
+TESTS = testsuite # https://www.gnu.org/software/automake/manual/html_node/Scripts_002dbased-Testsuites.html#Scripts_002dbased-Testsuites
 

@@ -1,31 +1,59 @@
 # autotools-template
 Template for an autotools (autoconf, automake) project
 
+Introduction
+============
+
+Setting up an `Autotools` build system can be daunting. So I decided to 
+create a template with the basics to use as the basis for my projects. 
+
+It may be surprising to the novice that there is no `./configure` but
+`./configure` is a generated file that it's shipped with the
+distribution of your software  (the tarball that you get `make dist`). 
+As such the `./configure` doesn't belong in the source control
+repository. Running `autoreconf -f` will generate `./configure` and a
+bunch of other files. 
+
+To build from scrath you need to perform:
+
+    autoreconf -i # Only needed if configure.ac or Makefile.am changes
+    ./configure   # generates Makefiles and config.h
+    make # build 
+    make check # run the tests
+
+
+I'm not an autotools expert by any means. So take my advice with a grain
+of salt. 
+
+There are two input files:
+
+  * `configure.ac`: The `./configure` script will be generated from 
+                    from it. Here is were you check for libraries,
+                    headers, etc.
+  * `Makefile.am`: This file will be transformed into `Makefile.in` that 
+                   `./configure` will use to generate the `Makefile`.
+
+What to do after cloning the repository
+=======================================
+
+configure.ac
+------------
 
 Edit configure.ac to change the FULL-PACKAGE-NAME, VERSION and 
 BUG-REPORT-ADDRESS fields to match your project.
 
-Edit src/Makefile.am to configure the "products" or executables. 
+Makefile.am
+-----------
+
+Edit src/Makefile.am to say which "products" (executables, binaries) 
+will be generated and what are the source files for each one. 
+
 bin_PROGRAMS = executable1 executable2
 executable1_SOURCES = sourcefile1.c sourcefile2.c
-executable1_CFLAGS = 
+executable1_CFLAGS =  
 executable2_SOURCES = sourcefile3.c sourcefile4.c
 executable2_CFLAGS = 
 
-
-
-./autogen.sh will generate ./configure and the Makefile.in files
-from the configure.ac, Makefile.am and src/Makefile.am files
-
-./configure will generate config.h and Makefile and src/Makefile
-
-
-Run: 
-./autogen.sh && ./configure && make
-
-to test the whole setup. 
-
-You need to run ./autogen.sh && ./configure after modifying *.ac or *.am files
 
 Reference material
 ==================
