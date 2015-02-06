@@ -51,8 +51,12 @@ AC_CHECK_HEADER([stdlib.h])
 
 # Checks for library functions.
 
-
-PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) # use pkg-config to fill DEPS_CFLAGS and DEPS_LIBS
+# The following statement will use pkg-config --cflags --libs 
+# to find out CFLAGS and -l options required to build a target that 
+# it's going to link against glib2.0.
+# The required CFLAGS and -l options are available as DEPS_CFLAGS
+# and DEPS_LIBS in Makefile.am
+PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
