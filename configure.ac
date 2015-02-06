@@ -31,6 +31,10 @@ AC_PROG_INSTALL
 #                 AC_MSG_ERROR([You need to install pthreads library.])
 #                 ])
 
+# AC_SEARCH_LIBS([g_test_init], [glib-2.0],[],[
+#                 AC_MSG_ERROR([You need to install glib-2.0 library.])
+#                 ])
+
 # Checks for header files.
 AC_CHECK_HEADER([stdlib.h])
 
