@@ -4,6 +4,7 @@
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AC_CONFIG_AUX_DIR([build-aux])
+AM_PATH_GLIB_2_0
 AM_INIT_AUTOMAKE([foreign subdir-objects]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
 # silent make https://autotools.io/automake/silent.html
@@ -58,7 +59,7 @@ AC_CHECK_HEADER([stdlib.h])
 # it's going to link against glib2.0.
 # The required CFLAGS and -l options are available as DEPS_CFLAGS
 # and DEPS_LIBS in Makefile.am
-PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
+# PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
 
 AC_CONFIG_FILES([Makefile])
 GLIB_TESTS

@@ -19,7 +19,7 @@ testsuite_SOURCES = tests/test.c
 # CFLAGS and -l options that are retrieved from pkg-config (configure.ac)
 # DEPS_CFLAGS and DEPS_LIBS are filled by PKG_CHECK_MODULES (configure.ac)
 
-testsuite_CFLAGS = $(DEPS_CFLAGS) # DEPS_* are filled by PKG_CHECK_MODULES 
-testsuite_LDADD = $(DEPS_LIBS)     # in configure.ac
+testsuite_CFLAGS = $(GLIB_CFLAGS) # DEPS_* are filled by PKG_CHECK_MODULES 
+testsuite_LDADD = $(GLIB_LIBS)     # in configure.ac
 
 
