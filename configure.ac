@@ -63,4 +63,5 @@ PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1])
 AC_CONFIG_FILES([Makefile])
 GLIB_TESTS
 AC_REQUIRE_AUX_FILE([tap-driver.sh])
+AC_REQUIRE_AUX_FILE([tap-test])
 AC_OUTPUT
