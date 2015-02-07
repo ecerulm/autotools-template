@@ -1,5 +1,4 @@
-LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) $(top_srcdir)/build-aux/tap-driver.sh
-LOG_COMPILER = $(top_srcdir)/build-aux/tap-test
+include $(top_srcdir)/build-aux/glib-tap.mk
 
 AM_CFLAGS = # CFLAGS applicable to all executables (products)
 
