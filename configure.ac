@@ -3,6 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
+AC_CONFIG_AUX_DIR([build-aux])
 AM_INIT_AUTOMAKE([foreign subdir-objects]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
 # silent make https://autotools.io/automake/silent.html
@@ -13,6 +14,7 @@ AM_SILENT_RULES([yes]) # less verbose make output
 
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_MACRO_DIR([build])
 
 AC_LANG([C]) # Use C not C++
 
@@ -59,4 +61,6 @@ AC_CHECK_HEADER([stdlib.h])
 PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
 
 AC_CONFIG_FILES([Makefile])
+GLIB_TESTS
+AC_REQUIRE_AUX_FILE([tap-driver.sh])
 AC_OUTPUT

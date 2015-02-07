@@ -33,6 +33,20 @@ There are two input files:
   * `Makefile.am`: This file will be transformed into `Makefile.in` that 
                    `./configure` will use to generate the `Makefile`.
 
+Regarding tests, the basic aproach is to have multiple is to run some 
+programs with the test and just check the exit code for those. This is
+simple and functional but you only get a PASS / FAIL per executable. To
+be able to get the individual tests results (asusming that there are 
+several , potentially hundreds, of test on a single executable) you need
+to use the TAP.
+
+The TAP aproach is that the executables that you use for test will
+output the test result on standard out so that `make check` will parse 
+it, collect the results, and present them in a nice way. 
+
+I opted to go for the TAP approach although it requires a more complex
+setup.
+
 What to do after cloning the repository
 =======================================
 

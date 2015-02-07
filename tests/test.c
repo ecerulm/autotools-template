@@ -41,5 +41,6 @@ int main(int argc, char *argv[])
   g_test_add("/set0/my second test", /* type fixture*/ dfixture, /*tdata*/NULL, /*fsetup*/ my_setup, my_second_test, my_teardown);
   g_test_add("/set0/my third test", /* type fixture*/ dfixture, /*tdata*/NULL, /*fsetup*/ my_setup, my_third_test, my_teardown);
   g_test_add("/set0/my fourth test", /* type fixture*/ dfixture, /*tdata*/NULL, /*fsetup*/ my_setup, my_fourth_test, my_teardown);
-  return g_test_run();
+  g_test_run();
+  return 0;
 }
