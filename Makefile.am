@@ -5,7 +5,9 @@ AM_CFLAGS = # CFLAGS applicable to all executables (products)
 # Convenience library so that it can be resued 
 # between my_executable and the tests
 noinst_LIBRARIES = libcommon.a
-libcommon_a_SOURCES = src/common.c
+libcommon_a_SOURCES = src/common.h src/common.c
+# src/common.h appear in SOURCES to that it gets copied to
+# distribution tgz.
 
 # The main product 
 bin_PROGRAMS = myexecutable # make all will generate ./my_executable 
