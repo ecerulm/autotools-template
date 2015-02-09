@@ -11,7 +11,7 @@ libcommon_a_SOURCES = src/common.c
 bin_PROGRAMS = myexecutable # make all will generate ./my_executable 
 myexecutable_SOURCES = \
                        src/main.c
-myexecutable_CFLAGS = #--std=c11 # CFLAGS applicable to myexecutable_SOURCES
+myexecutable_CFLAGS = $(AM_CFLAGS) #--std=c11 # CFLAGS applicable to myexecutable_SOURCES
 myexecutable_LDADD = libcommon.a
 
 
@@ -29,7 +29,7 @@ testsuite_SOURCES = tests/test.c
 # DEPS_CFLAGS and DEPS_LIBS are filled by PKG_CHECK_MODULES (configure.ac)
 
 testsuite_CPPFLAGS = -I$(top_srcdir)/src
-testsuite_CFLAGS = $(GLIB_CFLAGS) # DEPS_* are filled by PKG_CHECK_MODULES 
+testsuite_CFLAGS = $(AM_CFLAGS) $(GLIB_CFLAGS) # DEPS_* are filled by PKG_CHECK_MODULES 
 testsuite_LDADD = $(GLIB_LIBS) libcommon.a    # in configure.ac
 
 
