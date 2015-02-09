@@ -30,6 +30,8 @@ AC_PROG_CC
 AC_PROG_CC_C99 # or AC_PROG_CC_89 to force C89 mode or AC_PROG_CC_STDC to go to latest supported standard (currently C99)
 
 AC_PROG_INSTALL
+AC_PROG_CC_C_O # Need to have per product flags myexecutable_CFLAG
+AC_PROG_RANLIB # Need for to create libraries: .a 
 
 # Checks for libraries.
 

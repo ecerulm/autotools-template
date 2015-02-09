@@ -3,6 +3,8 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
+#include "common.h"
+
 typedef struct {
   int a; /* usually some other data structure that you
           * need for your tests */
@@ -26,6 +28,7 @@ void my_second_test(dfixture *df, gconstpointer ignored) {
 }
 
 void my_third_test(dfixture *df, gconstpointer ignored) {
+  myfunc();
   g_test_incomplete("incomplete means that there is some functionality missing");
 }
 
