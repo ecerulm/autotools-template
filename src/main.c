@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "common.h"
+#include <assert.h>
 
 int main(int argc, char *argv[])
 {
@@ -13,5 +14,6 @@ int main(int argc, char *argv[])
   printf ("PACKAGE_NAME "PACKAGE_NAME "\n");
   printf ("PACKAGE_STRING " PACKAGE_STRING "\n");
   printf ("PACKAGE_TARNAME " PACKAGE_TARNAME "\n");
+  assert( 1 > 0);
   return 0;
 }

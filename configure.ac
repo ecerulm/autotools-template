@@ -33,6 +33,7 @@ AC_PROG_INSTALL
 AC_PROG_CC_C_O # Need to have per product flags myexecutable_CFLAG
 AC_PROG_RANLIB # Need for to create libraries: .a 
 
+
 # Checks for libraries.
 
 # Found libraries are automatically addded to LIBS
@@ -45,6 +46,7 @@ AC_PROG_RANLIB # Need for to create libraries: .a
 #                 ])
 
 # Checks for header files.
+AC_HEADER_ASSERT # ./configure --disable-assert to define NDEBUG 
 AC_CHECK_HEADER([stdlib.h])
 
 # Check for C11's optional Atomic operations library 
