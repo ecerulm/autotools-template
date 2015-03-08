@@ -66,7 +66,8 @@ AC_CHECK_HEADER([stdlib.h])
 # PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
 
 AC_ARG_ENABLE([myfeature], 
-              AS_HELP_STRING([--enable-myfeature],[enable myfeature to get this and that]))
+              AS_HELP_STRING([--disable-myfeature],[disable myfeature to get remove support for this and that]),
+              [enable_myfeature=${enableval}],[enable_myfeature=yes])
 
 if test "x${enable_myfeature}" == "xyes"; then
   AC_DEFINE([MYFEATURE], 1, [myfeature is enabled])
