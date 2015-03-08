@@ -27,3 +27,5 @@ testsuite
 *.log
 *.trs
 lib*.a
+full-package-name-VERSION.tar.gz
+full-package-name-VERSION/
