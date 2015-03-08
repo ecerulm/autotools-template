@@ -63,6 +63,19 @@ AC_CHECK_HEADER([stdlib.h])
 # and DEPS_LIBS in Makefile.am
 # PKG_CHECK_MODULES([DEPS], [glib-2.0 >= 2.24.1]) 
 
+AC_ARG_ENABLE([myfeature], 
+              AS_HELP_STRING([--enable-myfeature],[enable myfeature to get this and that]))
+
+if test "x${enable_myfeature}" == "xyes"; then
+  AC_DEFINE([MYFEATURE], 1, [myfeature is enabled])
+else
+  AC_MSG_WARN([
+-----------------------------------------------------------------------------------
+Are you sure that you want to have myfeature disabled? You will lose this and that.
+-----------------------------------------------------------------------------------
+               ])
+fi
+
 AC_CONFIG_FILES([Makefile])
 GLIB_TESTS
 AC_REQUIRE_AUX_FILE([tap-driver.sh])
