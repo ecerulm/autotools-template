@@ -4,7 +4,6 @@
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
 AC_CONFIG_AUX_DIR([build-aux])
-AM_PATH_GLIB_2_0
 AM_INIT_AUTOMAKE([foreign subdir-objects]) # Does not require NEWS, COPYING, AUTHORS, ChangeLog or README
 
 # silent make https://autotools.io/automake/silent.html
@@ -14,7 +13,7 @@ AM_SILENT_RULES([yes]) # less verbose make output
 # AM_SILENT_RULES() # use make -s to get silent output
 
 AC_CONFIG_SRCDIR([src/main.c])
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADERS([config.h]) # use config.h instead of passing -D in the command line
 AC_CONFIG_MACRO_DIR([build])
 
 AC_LANG([C]) # Use C not C++
@@ -80,7 +79,6 @@ Are you sure that you want to have myfeature disabled? You will lose this and th
 fi
 
 AC_CONFIG_FILES([Makefile])
-GLIB_TESTS
 AC_REQUIRE_AUX_FILE([tap-driver.sh])
 AC_REQUIRE_AUX_FILE([tap-test])
 AC_OUTPUT
