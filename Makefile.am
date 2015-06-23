@@ -24,11 +24,20 @@ myexecutable_LDADD = libcommon.a
 # Tests
 # 'check' comes from 'make check'
 
-check_PROGRAMS =  add.ctaptest
 TESTS = add.ctaptest
+check_PROGRAMS =  add.ctaptest
 
 add_ctaptest_SOURCES = tests/add.c src/add.c src/add.h
 add_ctaptest_CPPFLAGS = $(AM_CPPFLAGS) # so that tests find the header files
+
+
+# See http://www.gnu.org/software/automake/manual/html_node/Use-TAP-with-the-Automake-test-harness.html
+# TESTS ending in .ctaptest should produce TAP output
+# 1..2
+# ok 1 - message
+# not ok 2 - message
+TEST_EXTENSIONS = .ctaptest
+CTAPTEST_LOG_DRIVER = env AM_TAP_HAWK='$(AWK)' $(SHELL) $(top_srcdir)/build-aux/tap-driver.sh
 
 
 
