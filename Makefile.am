@@ -24,6 +24,9 @@ myexecutable_LDADD = libcommon.a
 # Tests
 # 'check' comes from 'make check'
 
+@VALGRIND_CHECK_RULES@
+
+
 TESTS = add.ctaptest
 check_PROGRAMS =  add.ctaptest
 
@@ -36,8 +39,12 @@ add_ctaptest_CPPFLAGS = $(AM_CPPFLAGS) # so that tests find the header files
 # 1..2
 # ok 1 - message
 # not ok 2 - message
+AUTOMAKE_OPTIONS = parallel-tests
 TEST_EXTENSIONS = .ctaptest
 CTAPTEST_LOG_DRIVER = env AM_TAP_HAWK='$(AWK)' $(SHELL) $(top_srcdir)/build-aux/tap-driver.sh
+# TESTS_ENVIRONMENT = $(VALGRIND)
+# CTAPTEST_TESTS_ENVIRONMENT = $(VALGRIND)
+# CTAPTEST_LOG_COMPILER = $(VALGRIND)
 
 
 

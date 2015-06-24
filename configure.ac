@@ -14,7 +14,7 @@ AM_SILENT_RULES([yes]) # less verbose make output
 
 AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h]) # use config.h instead of passing -D in the command line
-AC_CONFIG_MACRO_DIR([build])
+AC_CONFIG_MACRO_DIR([m4])
 
 AC_LANG([C]) # Use C not C++
 
@@ -80,4 +80,5 @@ fi
 
 AC_CONFIG_FILES([Makefile])
 AC_REQUIRE_AUX_FILE([tap-driver.sh])
+AX_VALGRIND_CHECK # http://www.gnu.org/software/autoconf-archive/ax_valgrind_check.html
 AC_OUTPUT
