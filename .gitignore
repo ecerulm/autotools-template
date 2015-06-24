@@ -29,3 +29,8 @@ testsuite
 lib*.a
 full-package-name-VERSION.tar.gz
 full-package-name-VERSION/
+-coverage.info
+*-coverage.info
+*-coverage/
+*.gcda
+*.gcno
