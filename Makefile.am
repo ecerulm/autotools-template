@@ -16,8 +16,10 @@ myexecutable_SOURCES = \
 											 src/add.c \
 											 src/add.h \
                        src/main.c
-myexecutable_CFLAGS = $(AM_CFLAGS) #--std=c11 # CFLAGS applicable to myexecutable_SOURCES
+myexecutable_CFLAGS = $(AM_CFLAGS) $(CODE_COVERAGE_CFLAGS) #--std=c11 # CFLAGS applicable to myexecutable_SOURCES
 myexecutable_LDADD = libcommon.a
+myexecutable_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
+# myexecutable_CFLAGS = $(CODE_COVERAGE_CFLAGS)
 
 
 
@@ -25,13 +27,19 @@ myexecutable_LDADD = libcommon.a
 # 'check' comes from 'make check'
 
 @VALGRIND_CHECK_RULES@
+@CODE_COVERAGE_RULES@
 
+# See all code_coverage_* options in the Makefile or m4/ax_code_coverage.m4
+CODE_COVERAGE_IGNORE_PATTERN = tests/*
+CODE_COVERAGE_IGNORE_PATTERN += stdio2.h
 
 TESTS = add.ctaptest
 check_PROGRAMS =  add.ctaptest
 
 add_ctaptest_SOURCES = tests/add.c src/add.c src/add.h
 add_ctaptest_CPPFLAGS = $(AM_CPPFLAGS) # so that tests find the header files
+add_ctaptest_LDFLAGS = $(CODE_COVERAGE_LDFLAGS)
+add_ctaptest_CFLAGS = $(CODE_COVERAGE_CFLAGS)
 
 
 # See http://www.gnu.org/software/automake/manual/html_node/Use-TAP-with-the-Automake-test-harness.html
